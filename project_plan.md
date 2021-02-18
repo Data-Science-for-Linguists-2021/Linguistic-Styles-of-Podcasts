@@ -11,3 +11,14 @@ Make secondary DataFrames for each podcast with the columns: episode title, rele
 Use the statistics library to test for correlation (i.e. Does a higher/lower TTR affect rating?
 	Do comedy podcasts have more words per minute than educational ones?  Is there a linguistic
 	style change from year to year?).
+
+Sources (if applicable; so far, haven't learned how to web scrape yet):
+https://loretranscripts.tumblr.com/
+https://storycorps.org/podcast/
+https://onbeing.org/series/
+https://99percentinvisible.org/episodes/
+https://gimletmedia.com/shows/science-vs
+https://blog.simonsays.ai/transcripts-of-dirty-john-podcast-series-la-times-wondery-82fa75c14efd
+https://www.npr.org/programs/
+https://www.nytimes.com/spotlight/podcasts
+https://maximumfun.org/transcripts/
