@@ -70,3 +70,66 @@ I've applied a GNU general public license to my data/project.
 	- Move Your DNA
 	- Welcome to Nightvale
 	- You're Wrong About
+
+
+### **3rd Progress Report** - **04/13/2021**
+I found another podcast with transcripts (Neoscum) and added it to the [consolidated dataframe](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/data.ipynb).  Unfortunately, the transcripts were all fan-made and in Google documents in a Google drive, so I had to manually copy-paste the text (removing apostrophes and line breaks along the way) for 20 episodes.  It wasn't too time-consuming.
+
+I dropped transcripts from the dataframe whose text is shorter than 6,500 characters, which kept all podcasts that were scraped correctly.
+
+I spent about two hours doing the spacy tutorial on DataCamp, and I have a pretty good grasp of the basics. I'm using spacy's medium English model, but tokenizing still takes about 20 minutes.  I've tried many times to pickle the dataframe and transfer it to crc with no success (refer to the question in Teams), but I don't mind waiting the 20 minutes (I never have trouble finding something else to work on).
+
+I made a dataframe with categorical data and non-lexical features, then joined it to the consolidated dataframe (to do this, I had to un-multi-index the text-ful dataframe, which was a bit of a headache).  The non-lexical features I chose were: hosts (regular hosts are a whole number, .5 represents a podcast that regularly has a guest on), genre-topic (originally just genre, but I didn't think that covered enough), scripted/unscripted, Fiction/Non, Format (interview, chat, etc), and rating.  I knew that all of the ratings would be relatively high - above 4.0 - but they're actually all above 4.6 on itunes.  This teeny-tiny margin likely won't allow me to be able to make claims about what makes a podcast "successful" raings-wise.  I'll run the model many times using different categorical aspects as targets and use get dummies to use other ones as features.
+
+So far, text features that I could extract and add to the dataframe are: 
+- Tokens = scrapy-parsed
+- Top50 = 50 most commonly-occurring tokens
+- Token_count = overall length of transcript including punctuation and anything that spacy's tokenizer considered a token
+- Token_lengths = tuple with (str, int) as token, length.  Punctuation and non-alpha strings excluded
+- Avg_token_len = average alpha token length over entire transcript
+- TTR = this is a pure, uncorrected-for-length TTR.  I figured that if each transcript is over 6500 characters, there won't be a length issue. 
+- kband = tuple with (str, int) as token-lemma, kband.  I was unsure if using the lemma is better, but my thinking is that it will be a more accurate reflection of rare-word use, since it's just the meaty-meaning-aspect of the word being rated
+- Avg_kband = self-explanatory at this point.  Weighed against whole transcript.
+- Bigrams = list of bigram tuples - only alpha strings
+- Bigram_top25 = top 25 most common bigrams.  I was hoping this would help me find and parse the host's name
+- POS = list of tuples: (token, POS)
+- POS_freq = dictionary of percentage of entire transcript that each POS comprises
+- Noun_freq, verb_freq, Adj_freq, Adv_freq = "dummified" stats from the POS_freq dictionary
+- POS_length = dictionary containing average letter-length of nouns, verbs, adverbs, and adjectives
+- Avg_noun_len, Avg_verb_len, Avg_adj_len, Avg_adv_len = "dummified" stats from teh POS_length dictionary
+* will likely remove POS_freq and POS_length columns, just used them to make the other columns so that map() could just copy the info from the already-existing dictionary rather than run a function on every row for each POS
+- verb_lemmas = top 20 verbs and what percentage of total verb occurrence they make up
+- sentence_toks = nltk's sent tokenizer
+- sentence_length = tuple (sentence, int).  Used nltk, so punctuation is excluded
+
+Planning on adding:
+- entity count using spacy's token.ent_ attribute
+- "conversation hog" = percentage that each host talks
+- probably more POS_freqs - include interjections, conjunctions, prepositions, etc
+- favorite punctuation (I'm assuming that interview-formatted transcripts will win on the ? frequency) weighed against transcript length
+- sweariness - make a dictionary of swear words and count-em, also make a dictionary of pseudo swear words (e.g. darn, fudge, shoot) and count em
+
+Dataframe stats:
+- podcasts (19):
+	- This American Life           732
+	- Radiolab                     261
+	- Welcome to Nightvale         170
+	- Move Your DNA                108
+	- Bullseye with Jesse Thorn     63
+	- MBMBaM                        32
+	- Sawbones                      30
+	- One Bad Mother                29
+	- Wonderful                     29
+	- Shmanners                     28
+	- The Greatest Generation       28
+	- Judge John Hodgman            28
+	- Friendly Fire                 28
+	- NeoScum                       20
+	- The Adventure Zone            19
+	- The Flophouse                 16
+	- Switchblade Sisters           14
+	- You're Wrong About            13
+	- Unlocking Us                  12
+Total of 1584 rows
+18270894 tokens
+
