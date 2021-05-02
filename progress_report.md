@@ -101,13 +101,19 @@ So far, text features that I could extract and add to the dataframe are:
 - verb_lemmas = top 20 verbs and what percentage of total verb occurrence they make up
 - sentence_toks = nltk's sent tokenizer
 - sentence_length = tuple (sentence, int).  Used nltk, so punctuation is excluded
-
-Planning on adding:
-- entity count using spacy's token.ent_ attribute
-- "conversation hog" = percentage that each host talks
-- probably more POS_freqs - include interjections, conjunctions, prepositions, etc
-- favorite punctuation (I'm assuming that interview-formatted transcripts will win on the ? frequency) weighed against transcript length
-- sweariness - make a dictionary of swear words and count-em, also make a dictionary of pseudo swear words (e.g. darn, fudge, shoot) and count em
+- entity counts = dictionary of entities parsed by spacy's token.ent_ attribute
+- dummy-entity columns: occurrences of several types of entities compared to total # of tokens in transcript
+    - Organization, Art, Date, Geopolitical, Numbers, Event, Cash, Time, Product
+    - I originally wanted to use spacy's PERSON ent label, but it turned out not to work so well.  I think transcripts are a bit too chaotic for spacy to parse, plus the naming conventions are all over the place (sometimes they just use host initials, sometimes full names, sometimes first names, etc).  I spent about 3 hours successfully making a function that mapped first names to full names, but there were so many tokens incorrectly categorized as PERSON that I don't think any real data collection could come from it.  Along with that, I had to scrap the "conversation hog" (percentage that each host talks) column
+- favorite punctuation (and dummified) = occurrence of '.', '?', '!', and '-' against total occurrence of all punctuation EXCEPT commas.
+- conversation tag information = length in words of the tag and most commonly-appearing verb lemma in tag
+- Swear_count = occurrence of swear words weighed against token count
+- Fake_swear_count = occurrence of swear word substitutions (i.e., "darn","shoot","fudge") weighed against token count
+- Opinion_count = how many times a pronoun followed by a lemma of either "think" or "feel" occur
+- state-of-being = use a spacy matcher to count how many "I think/feel" statments there are using lemmatized verbs
+- prepositions per sentence = I think this is a pretty good representation of sentence complexity.  We shall see.
+- charitable appeal = how many times does the word "donate/donation" appear in each transcript?
+- socially inclined = how many times is a social media platform mentioned?
 
 Dataframe stats:
 - podcasts (19):
