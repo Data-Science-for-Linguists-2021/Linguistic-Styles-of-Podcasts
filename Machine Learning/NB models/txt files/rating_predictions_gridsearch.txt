@@ -1,0 +1,6 @@
+/ihome/crc/install/python/miniconda3-3.7/lib/python3.7/site-packages/sklearn/feature_extraction/text.py:17: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Mapping, defaultdict
+best parameters: {'nb__alpha': 0.25, 'nb__fit_prior': False, 'tfidf__lowercase': True, 'tfidf__max_features': 5000, 'tfidf__ngram_range': (1, 2), 'tfidf__stop_words': 'english'}
+best mean accuracy: 0.8857323232323232
+[0.88383838 0.84722222 0.88573232 0.85416667 0.88257576 0.84280303
+ 0.88131313 0.85479798]
