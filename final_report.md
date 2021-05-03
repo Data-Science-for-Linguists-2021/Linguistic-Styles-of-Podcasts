@@ -3,8 +3,6 @@ Ling 1340
 Final report
 
 
-**(sidenote:  Hi Na-Rae. I'm sorry, but my main jupyter notebook, data.ipynb, does not have a table of contents and links.  Initially, I followed the directions for linking and had it working and cleaned up the dataframe for about 2 hours, then made sure to save it SEVERAL TIMES locally.  I committed my changes, and when I went to open it again, everything I did was gone.  So I'm really sorry about that, but I simply can't spend another hour on cleaning and organizing.)
-
 ## 1.  Introduction
 
 As of April 2021, there are 48 million podcast episodes available across several different platforms, including Spotify, iTunes, and Pocket Casts.  The popularity of podcasts has skyrocketed within the last 10 years, and I hav personally found them to be a very reliable source of comfort throughout the coronavirus pandemic.  No matter your interests, you can find a podcast that is uniquely suited to you.  Because of the amazing genre- and topic-range available with podcasts -- and also because they are free to access if you have a phone or an internet connection -- I think that podcasting will become a very integral part of everyone's lives in the year to come.
