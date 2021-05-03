@@ -24,7 +24,7 @@ In this project, I hoped to gather linguistic data through analysis of podcast t
 - [You're Wrong About](https://www.buzzsprout.com/1112270) - _13 episodes_
 - [Unlocking Us](https://brenebrown.com/unlockingus/) - _12 episodes_
 
-Access my spiders [here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/tree/main/spiders).
+[Access my spiders here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/tree/main/spiders).
 Though I developed a working Scrapy module, I was unable to use data scraped for the following podcasts for copyright reasons (I did not receive a response for my request to use the data):
 - 99% Invisible
 - Freakonomics
@@ -33,4 +33,11 @@ Though I developed a working Scrapy module, I was unable to use data scraped for
 - StoryCorps
 
 
-Though my original intent was to explore and compare linguistic styles across extrinsic attributes, I admit that my sample size was far too small to provide any substantial observations.  Specifically, I wanted to explore linguistic style versus iTunes rating to see what features were more likely to appear in a highly-rated podcast.  As I anticipated, though, all of the podcasts that I could access had ratings between 4.5 and 4.9 -- it makes sense that transcripts are only available if there is a demand for them.  This tiny margin didn't allow for any constructive analysis.
+[Access my main dataframe here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/data.ipynb), as well as [one that I was able to parse out host speech from](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/data.ipynb) thanks to consistent text formatting and [one to be used for linear regression measuring language change over time](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/this_american_life.ipynb) at a later date.  
+
+
+[Access my machine learning models here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/tree/main/Machine%20Learning), as well as the [resulting figures](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/tree/main/Figures).  
+
+NOTE:  This is my first foray into machine learning, data science, web scraping, and text processing.  All findings and analysis are for exploratory purposes only.  In the future, I intend to use this data for sociolinguistic discourse analysis and syntax parsing.
+
+Thank you for visiting my term project!  Feel free to leave feedback in my [guestbook](https://github.com/Data-Science-for-Linguists-2021/Class-Lounge/blob/main/guestbooks/guestbook_abby.md)
