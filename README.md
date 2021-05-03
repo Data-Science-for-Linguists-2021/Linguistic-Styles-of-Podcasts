@@ -33,7 +33,7 @@ Though I developed a working Scrapy module, I was unable to use data scraped for
 - StoryCorps
 
 
-[Access my main dataframe here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/data.ipynb), as well as [one that I was able to parse out host speech from](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/data.ipynb) thanks to consistent text formatting and [one to be used for linear regression measuring language change over time](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/this_american_life.ipynb) at a later date.  
+[Access my main dataframe here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/data.ipynb), as well as [one that I was able to parse out host speech from](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/mcelroy_podcasts.ipynb) thanks to consistent text formatting and [one to be used for linear regression measuring language change over time](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/blob/main/this_american_life.ipynb) at a later date.  
 
 
 [Access my machine learning models here](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/tree/main/Machine%20Learning), as well as the [resulting figures](https://github.com/Data-Science-for-Linguists-2021/Linguistic-Styles-of-Podcasts/tree/main/Figures).  
